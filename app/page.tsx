@@ -1,8 +1,8 @@
 import Club from "@/components/ui/club";
 import Feature from "@/components/ui/feature";
-import Footer from "@/components/ui/footer";
 import Newcard from "@/components/ui/newcard";
 import Popular from "@/components/ui/popular";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -62,7 +62,7 @@ export default function Home() {
       },
     ].map((item, idx) => (
       <div key={idx} className="w-full sm:w-[45%] md:w-[30%] lg:w-[23%] bg-white text-center p-4">
-        <img src={item.img} alt={item.title} className="mx-auto mb-4" />
+        <Image src={item.img} alt={item.title} className="mx-auto mb-4" />
         <h3 className="text-[18px] font-medium text-black">{item.title}</h3>
         <p className="text-[15px] text-black">{item.description}</p>
       </div>

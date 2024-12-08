@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function Popular(){
     return(
       <div className="w-full py-12">
@@ -11,7 +12,7 @@ export default function Popular(){
         {/* Large Product */}
         <div className="flex-shrink-0 w-full sm:w-[300px] md:w-[400px] lg:w-[630px]">
           <div className="w-full h-[300px]">
-            <img
+            <Image
               src="/images/large.png"
               alt="The Poplar Suede Sofa"
               className="w-full h-full object-cover"
@@ -27,8 +28,8 @@ export default function Popular(){
     
         {/* Smaller Product Cards */}
         {[
-          { img: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
-          { img: "/images/chair.png", name: "The Dandy Chair", price: "£250" },
+          { Image: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
+          { image: "/images/chair.png", name: "The Dandy Chair", price: "£250" },
         ].map((item, index) => (
           <div
             key={index}
@@ -36,7 +37,7 @@ export default function Popular(){
           >
             <div className="w-full h-[300px]">
               <img
-                src={item.img}
+                src={item.Image}
                 alt={item.name}
                 className="w-full h-full object-cover mx-auto"
               />

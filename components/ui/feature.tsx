@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function Feature(){
     return(
         <>
@@ -10,7 +11,7 @@ export default function Feature(){
                     <button type="button" className="px-10 py-2 mt-12 rounded text-sm outline-none tracking-wide bg-[#F9F9F9] text-[#000] hover:bg-blue-700 feature-btn">Get in Touch</button>
             </div>
             <div className="md:h-[470px]">
-                <img src="/images/sofa.png" className="w-full h-full md:object-contain "/>
+                <Image src="/images/sofa.png" className="w-full h-full md:object-contain " alt="Loading"/>
             </div>
         </div>
         </>

@@ -3,9 +3,9 @@ export default function(){
         <>
         <footer className="bg-[#2A254B] pt-12 pb-6 px-4 sm:px-10 font-sans tracking-wide">
   <div className="max-w-screen-xl mx-auto">
-    {/* <!-- Menu Grid --> */}
+    
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* <!-- Menu --> */}
+    
       <div>
         <h2 className="text-white text-sm uppercase font-semibold mb-4">Menu</h2>
         <ul className="space-y-3">

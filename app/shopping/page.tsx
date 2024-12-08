@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Shopping(){
     return(
         <>
@@ -7,7 +8,7 @@ export default function Shopping(){
 
   <div className="cart-item flex flex-col sm:flex-row items-center justify-between bg-white rounded-lg p-4 shadow mb-4">
     <div className="w-28 h-28">
-      <img src="/images/plant.png" alt="Lamp" className="w-full h-full object-cover rounded-md" />
+      <Image src="/images/plant.png" alt="Lamp" className="w-full h-full object-cover rounded-md" />
     </div>
     <div className="details flex-1 sm:ml-4 text-center sm:text-left">
       <h4 className="text-lg font-semibold text-gray-800">Stylish Lamp</h4>
@@ -25,7 +26,7 @@ export default function Shopping(){
 
   <div className="cart-item flex flex-col sm:flex-row items-center justify-between bg-white rounded-lg p-4 shadow mb-4">
     <div className="w-28 h-28">
-      <img src="/images/Product Image.png" alt="Lamp" className="w-full h-full object-cover rounded-md" />
+      <Image src="/images/Product Image.png" alt="Lamp" className="w-full h-full object-cover rounded-md" />
     </div>
     <div className="details flex-1 sm:ml-4 text-center sm:text-left">
       <h4 className="text-lg font-semibold text-gray-800">Modern Lamp</h4>

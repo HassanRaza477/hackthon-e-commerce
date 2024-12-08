@@ -11,10 +11,10 @@ export default function Newcard(){
   <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-3 md:px-6 lg:px-8">
     {/* Ceramic Card */}
     {[
-      { img: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
-      { img: "/images/parent.png", name: "Rustic Vase Set", price: "£155" },
-      { img: "/images/lamp.png", name: "The Silky Vase", price: "£125" },
-      { img: "/images/photo.png", name: "The Lucy Lamp", price: "£399" },
+      { Image: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
+      { Image: "/images/parent.png", name: "Rustic Vase Set", price: "£155" },
+      { Image: "/images/lamp.png", name: "The Silky Vase", price: "£125" },
+      { Image: "/images/photo.png", name: "The Lucy Lamp", price: "£399" },
     ].map((item, index) => (
       <div
         key={index}
@@ -22,8 +22,8 @@ export default function Newcard(){
       >
         <div className="w-full h-[375px]">
           <img
-            src={item.img}
-            alt={item.name}
+            src={item.Image}
+            alt="loading"
             className="w-full h-full object-cover mx-auto"
           />
         </div>

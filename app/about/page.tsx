@@ -40,28 +40,28 @@ export default function About() {
     {/* Brand Cards */}
     {[
       {
-        img: "/images/check.png",
+        Image: "/images/check.png",
         title: "Next day as standard",
         description: "Order before 3pm and get your order the next day as standard"
       },
       {
-        img: "/images/Delivery.png",
+        Image: "/images/Delivery.png",
         title: "Free Shipping",
         description: "Enjoy free shipping on all orders above £50."
       },
       {
-        img: "/images/Purchase.png",
+        Image: "/images/Purchase.png",
         title: "Quality Guarantee",
         description: "We provide a 2-year warranty on all products."
       },
       {
-        img: "/images/sprout.png",
+        Image: "/images/sprout.png",
         title: "Secure Payment",
         description: "Safe and secure payment methods for your peace of mind."
       },
     ].map((item, idx) => (
       <div key={idx} className="w-full sm:w-[45%] md:w-[30%] lg:w-[23%] bg-white text-center p-4">
-        <img src={item.img} alt={item.title} className="mx-auto mb-4" />
+        <img src={item.Image} alt={item.title} className="mx-auto mb-4" />
         <h3 className="text-[18px] font-medium text-black">{item.title}</h3>
         <p className="text-[15px] text-black">{item.description}</p>
       </div>

@@ -1,4 +1,5 @@
 import Club from "@/components/ui/club";
+import Image from "next/image";
 export default function Product() {
     return (
         <>
@@ -6,7 +7,7 @@ export default function Product() {
                 <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-10">
                     <div className="space-y-4 text-center lg:sticky top-8">
                         <div className="bg-gray-100 p-4 flex items-center sm:h-[500px] rounded-lg">
-                            <img
+                            <Image
                                 src="/images/Image Left.png"
                                 alt="Product"
                                 className="w-full h-[500px] object-cover rounded-lg"
@@ -59,10 +60,10 @@ export default function Product() {
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-3 md:px-6 lg:px-8">
                     {/* Ceramic Card */}
                     {[
-                        { img: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
-                        { img: "/images/parent.png", name: "Rustic Vase Set", price: "£155" },
-                        { img: "/images/lamp.png", name: "The Silky Vase", price: "£125" },
-                        { img: "/images/photo.png", name: "The Lucy Lamp", price: "£399" },
+                        { Image: "/images/home-image.png", name: "The Dandy Chair", price: "£250" },
+                        { Image: "/images/parent.png", name: "Rustic Vase Set", price: "£155" },
+                        { Image: "/images/lamp.png", name: "The Silky Vase", price: "£125" },
+                        { Image: "/images/photo.png", name: "The Lucy Lamp", price: "£399" },
                     ].map((item, index) => (
                         <div
                             key={index}
@@ -70,7 +71,7 @@ export default function Product() {
                         >
                             <div className="w-full h-[375px]">
                                 <img
-                                    src={item.img}
+                                    src={item.Image}
                                     alt={item.name}
                                     className="w-full h-full object-cover mx-auto"
                                 />
