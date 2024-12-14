@@ -1,3 +1,4 @@
+
 export default function Header() {
   return (
     <>
@@ -7,7 +8,7 @@ export default function Header() {
 
 
 
-          <a href="javascript:void(0)" className="shrink-0"><h1>Avoin</h1>
+          <a href="" className="shrink-0"><h1>Avoin</h1>
           </a>
 
           <div className="lg:absolute lg:right-10 flex items-center ml-auto space-x-8">
@@ -50,25 +51,21 @@ export default function Header() {
 
             <ul
               className='lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[280px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
-              <li className='max-lg:border-b max-lg:pb-4 px-3 lg:hidden'>
-                <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
-                </a>
-              </li>
               <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href="/"
                 className=' text-[#007bff] font-semibold block text-[15px]'>Home</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Plant Pots </a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Tables</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Ceramics</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Chairs</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Crokrey</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Tableware</a></li>
-              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href='javascript:void(0)'
+              <li className='max-lg:border-b max-lg:px-3 max-lg:py-3'><a href=''
                 className=' text-gray-800 text-[15px] block'>Cutlery</a></li>
             </ul>
           </div>
@@ -87,3 +84,4 @@ export default function Header() {
     </>
   )
 }
+

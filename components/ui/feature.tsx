@@ -11,7 +11,14 @@ export default function Feature(){
                     <button type="button" className="px-10 py-2 mt-12 rounded text-sm outline-none tracking-wide bg-[#F9F9F9] text-[#000] hover:bg-blue-700 feature-btn">Get in Touch</button>
             </div>
             <div className="md:h-[470px]">
-                <Image src="/images/sofa.png" className="w-full h-full md:object-contain " alt="Loading"/>
+            <Image
+  src="/images/sofa.png"
+  alt="Sofa"
+  className="w-full h-full md:object-contain"
+  width={600} // Adjust width based on your image size or layout
+  height={400} // Adjust height based on your image size or layout
+/>
+
             </div>
         </div>
         </>
