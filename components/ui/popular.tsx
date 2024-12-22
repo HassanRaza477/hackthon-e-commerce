@@ -9,9 +9,9 @@ export default function Popular() {
       </h3>
 
       {/* Products Section */}
-      <div className="mt-10 flex flex-wrap justify-center gap-6 px-3 md:px-6 lg:px-8">
+      <div className="mt-10 flex flex-row items-center justify-center gap-6 px-3 md:px-6 lg:px-8 flex-wrap">
         {/* Large Product */}
-        <div className="flex-shrink-0 w-full sm:w-[300px] md:w-[400px] lg:w-[630px]">
+        <div className="flex-shrink-0 w-full sm:w-[300px] md:w-[400px] lg:w-[500px]">
           <div className="w-full h-[300px] relative">
             <Image
               src="/images/large.png"
@@ -37,7 +37,7 @@ export default function Popular() {
         ].map((item, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-full sm:w-[200px] md:w-[300px] text-center"
+            className="flex-shrink-0 w-full sm:w-[200px] md:w-[300px] lg:w-[300px] text-center"
           >
             <div className="w-full h-[300px] relative">
               <Image
