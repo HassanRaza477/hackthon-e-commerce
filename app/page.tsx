@@ -2,6 +2,7 @@ import Club from "@/components/ui/club";
 import Feature from "@/components/ui/feature";
 import Newcard from "@/components/ui/newcard";
 import Popular from "@/components/ui/popular";
+import { Session } from "inspector/promises";
 import Image from "next/image";
 
 export default function Home() {
@@ -94,6 +95,7 @@ export default function Home() {
       <Popular />
       <Club />
       <Feature />
+
     </>
   );
 }

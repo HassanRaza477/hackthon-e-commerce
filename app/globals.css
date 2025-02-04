@@ -530,3 +530,16 @@ img{
   background: url('/images/bg-product.png') no-repeat;
   
 }
+.add-btn{
+  width: 45%;
+  padding: 10px 32px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  transition: 0.3s ease-in-out;
+}
+.add-btn:hover{
+  background-color: rgb(24, 24, 24);
+}
