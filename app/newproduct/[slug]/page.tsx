@@ -56,14 +56,6 @@ export default async function newProduct({ params }: ProductPageProps) {
                         <p className="text-lg text-gray-600">
                             <span className="font-semibold">Features:</span> {product.features}
                         </p>
-                        {product.dimensions ? (
-                            <p className="text-lg text-gray-600">
-                                <span className="font-semibold">Dimensions:</span>{" "}
-                                Height: {product.dimensions.height}, Width: {product.dimensions.width}, Depth: {product.dimensions.depth}
-                            </p>
-                        ) : (
-                            <p className="text-gray-500 italic">No dimensions available.</p>
-                        )}
                     </div>
                 </div>
             </div>
