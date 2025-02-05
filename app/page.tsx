@@ -2,7 +2,6 @@ import Club from "@/components/ui/club";
 import Feature from "@/components/ui/feature";
 import Newcard from "@/components/ui/newcard";
 import Popular from "@/components/ui/popular";
-import { Session } from "inspector/promises";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
           {/* <!-- Content Section --> */}
           <div className="w-full lg:w-[65%] bg-[#2A254B] text-white p-6 lg:p-8">
             <h1 className="text-[24px] md:text-[28px] lg:text-[32px] font-normal font-sans leading-normal lg:leading-[44.8px] ml-0 lg:ml-8">
-              The furniture brand for the future, with timeless designs
+              The furniture brand for the future with timeless designs
             </h1>
             <a
               href="#"
@@ -23,8 +22,8 @@ export default function Home() {
               View Collection
             </a>
             <p className="mt-8 md:mt-12 lg:mt-[150px] text-[14px] font-normal ml-0 lg:ml-8">
-              A new era in eco-friendly furniture with Avelon, the French luxury retail
-              brand with nice fonts, tasteful colors, and a beautiful way to display
+              A new era in eco friendly furniture with Avelon the French luxury retail
+              brand with nice fonts tasteful colors and a beautiful way to display
               things digitally using modern web technologies.
             </p>
           </div>

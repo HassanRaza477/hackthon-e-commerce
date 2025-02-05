@@ -37,7 +37,7 @@ export const getCartItem = ():product[] => {
 }
 
 
-export const submitOrder = async (orderData: any) => {
+export const submitOrder = async (orderData: string | number) => {
     try {
       const response = await fetch("/api/order", {
         method: "POST",
