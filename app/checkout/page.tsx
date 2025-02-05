@@ -97,7 +97,7 @@ export default function CheckoutPage() {
         if (!validateForm()) {
         }
 
-        const orderData:any = {
+        const orderData = {
           customerName: `${formValues.firstName} ${formValues.lastName}`,
           email: formValues.email,
           phone: formValues.phone,
@@ -115,8 +115,6 @@ export default function CheckoutPage() {
       
         try {
           await submitOrder(orderData);
-      
-          // Clear cart and form
           setCartItems([]);
           setFormValues({
             firstName: "",
@@ -131,7 +129,7 @@ export default function CheckoutPage() {
           localStorage.removeItem("appliedDiscount");
       
           Swal.fire("Success", "Your order has been placed!", "success");
-        } catch (error) {
+        } catch (_error) {
           Swal.fire("Error", "Order submission failed", "error");
         }
   };
