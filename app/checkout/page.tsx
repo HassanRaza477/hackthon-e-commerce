@@ -8,6 +8,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { CgChevronRight } from "react-icons/cg";
 import { getCartItem, submitOrder } from "../action/actions";
 import Swal from "sweetalert2";
+import { client } from "@/sanity/lib/client";
 
 // Define OrderData type for type safety
 interface OrderData {
@@ -64,64 +65,166 @@ export default function CheckoutPage() {
     return Object.values(errors).every((error) => !error);
   };
 
+
+
+
+
+  
   const handlePlaceOrder = async () => {
-    if (!validateForm()) return Swal.fire("Error", "Please fill all required fields", "error");
-
-    Swal.fire({
-      title: "Place Order?",
-      text: "Please review your cart before proceeding.",
-      icon: "info",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Checkout",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        setLoading(true); // Prevent duplicate submission
-
-        const orderData: OrderData = {
-          customerName: `${formValues.firstName} ${formValues.lastName}`,
-          email: formValues.email,
-          phone: formValues.phone,
-          address: formValues.address,
-          city: formValues.city,
-          zipCode: formValues.zipCode,
-          orderItems: cartItems.map((item) => ({
-            productName: item.name,
-            quantity: item.inventory,
-            price: item.price,
-          })),
-          totalPrice: total,
-          createdAt: new Date().toISOString(),
-        };
-
-        try {
-          const res = await fetch("/api/orders", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(orderData),
-          });
-          
-          setCartItems([]);
-          setFormValues({
-            firstName: "",
-            lastName: "",
-            address: "",
-            city: "",
-            zipCode: "",
-            phone: "",
-            email: "",
-          });
-          localStorage.removeItem("cart");
-          localStorage.removeItem("appliedDiscount");
-
-          Swal.fire("Success", "Your order has been placed!", "success");
-        } finally {
-          setLoading(false);
-        }
-      }
-    });
+    if (!validateForm()) {
+      return Swal.fire("Error", "Please fill all required fields", "error");
+    }
+  
+    const orderData = {
+      _type: "order",
+      customerName: `${formValues.firstName} ${formValues.lastName}`,
+      email: formValues.email,
+      phone: formValues.phone,
+      address: formValues.address,
+      city: formValues.city,
+      zipCode: formValues.zipCode,
+      cartItems: cartItems.map((item) => ({
+        _type: "reference",
+        _ref: item._id, // Ensure the product exists in Sanity
+      })),
+      total: total,
+      createdAt: new Date().toISOString(),
+      status: "Pending",
+    };
+  
+    setLoading(true);
+  
+    try {
+      // ✅ Ensure Sanity Client is authenticated with token
+      const response = await client.create(orderData);
+      console.log("✅ Order Created Successfully:", response);
+  
+      // Clear cart after successful order placement
+      localStorage.removeItem("cart");
+      localStorage.removeItem("appliedDiscount");
+      setCartItems([]);
+      setFormValues({
+        firstName: "",
+        lastName: "",
+        address: "",
+        city: "",
+        zipCode: "",
+        phone: "",
+        email: "",
+      });
+  
+      Swal.fire("Success", "Your order has been placed!", "success");
+    } catch (error: any) {
+      console.error("❌ Sanity Error:", error);
+      
+      // ✅ Show detailed error
+      Swal.fire("Error", `Failed to place order: ${error.message || "Unknown error"}`, "error");
+    } finally {
+      setLoading(false);
+    }
   };
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  // const handlePlaceOrder = async () => {
+  //   if (!validateForm()) return Swal.fire("Error", "Please fill all required fields", "error");
+
+    // Swal.fire({
+    //   title: "Place Order?",
+    //   text: "Please review your cart before proceeding.",
+    //   icon: "info",
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#3085d6",
+    //   cancelButtonColor: "#d33",
+    //   confirmButtonText: "Checkout",
+    // }).then((result) => {
+    //   if(result.isConfirmed){
+    //     if(validateForm()){
+    //       localStorage.removeItem("appliedDiscount");
+    //       Swal.fire(
+    //         "Success",
+    //         "Your Order Successfully has been  procced!",
+    //         "success",
+    //       )
+    //     }else{
+    //       Swal.fire(
+    //         "Error",
+    //         "Please fill the allfields",
+    //         "error"
+    //       )
+    //     }
+    //   }
+    // })
+
+        // const orderData = {
+        //   _type : 'order',
+        //   customerName: `${formValues.firstName} ${formValues.lastName}`,
+        //   email: formValues.email,
+        //   phone: formValues.phone,
+        //   address: formValues.address,
+        //   city: formValues.city,
+        //   zipCode: formValues.zipCode,
+        //   cartItems: cartItems.map((item) => ({
+        //     _type: 'reference',
+        //     _ref: item._id
+        //   })),
+        //   totalPrice: total,
+        //   discount: discount,
+        //   orderDate: new Date().toISOString(),      
+        // };
+
+        // try{
+        //   await client.create(orderData),
+        //   localStorage.removeItem("appliedDiscount")
+        // }catch(error){
+        //   console.error("error creating order",error)
+        // }
+    //     try {
+    //       const res = await fetch("/api/orders", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(orderData),
+    //       });
+          
+    //       setCartItems([]);
+    //       setFormValues({
+    //         firstName: "",
+    //         lastName: "",
+    //         address: "",
+    //         city: "",
+    //         zipCode: "",
+    //         phone: "",
+    //         email: "",
+    //       });
+    //       localStorage.removeItem("cart");
+
+    //       Swal.fire("Success", "Your order has been placed!", "success");
+    //     } finally {
+    //       setLoading(false);
+    //     }
+    //   }
+    // });
+  // };
 
   return (
     <div className="min-h-screen bg-gray-100 py-10">

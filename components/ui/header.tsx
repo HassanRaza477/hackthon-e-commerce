@@ -9,7 +9,7 @@ export default function Header() {
 
   const menuItems = [
     { name: "Home", link: "/" }, // Home now links to "/"
-    { name: "Plant Pots", link: "/plant-pots" },
+    { name: "Plant Pots", link: "/plants" },
     { name: "Tables", link: "/tables" },
     { name: "Ceramics", link: "/ceramics" },
     { name: "Chairs", link: "/chairs" },
@@ -75,3 +75,29 @@ export default function Header() {
     </header>
   );
 }
+// import Link from "next/link";
+
+// const categories = [
+//     { name: "Plant Pots", slug: "plant-pots"},
+//     { name: "Tables", slug: "tables" },
+//     { name: "Ceramics", slug: "ceramics" },
+//     { name: "Chairs", slug: "chairs" },
+//     { name: "Crockery", slug: "crockery" },
+//     { name: "Tableware", slug: "tableware" },
+//     { name: "Cutlery", slug: "cutlery" },
+// ];
+
+// export default function Header() {
+//     return (
+//         <header className="p-4 bg-gray-100 shadow">
+//             <nav className="flex justify-center space-x-6">
+//                 <Link href="/" className="font-bold text-blue-600">Home</Link>
+//                 {categories.map((category) => (
+//                     <Link key={category.slug} href={`/categories/${category.slug}`} className="text-gray-700 hover:text-blue-500">
+//                         {category.name}
+//                     </Link>
+//                 ))}
+//             </nav>
+//         </header>
+//     );
+// }
